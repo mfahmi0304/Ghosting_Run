@@ -4,23 +4,23 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private Button button1;
-    [SerializeField] private Button button2;
-    [SerializeField] private Button button3;
+    [SerializeField] private Button start_button;
+    [SerializeField] private Button options_button;
+    [SerializeField] private Button exit_button;
 
     private void Start()
     {
-        button1.onClick.AddListener(() =>
+        start_button.onClick.AddListener(() =>
         {
             SceneManager.LoadScene(1);
         });
 
-        button2.onClick.AddListener(() =>
+        options_button.onClick.AddListener(() =>
         {
             SceneManager.LoadScene(2);
         });
 
-        button3.onClick.AddListener(() =>
+        exit_button.onClick.AddListener(() =>
         {
             QuitGame();
         });
