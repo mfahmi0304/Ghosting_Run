@@ -22,7 +22,11 @@ public class MenuManager : MonoBehaviour
 
         button3.onClick.AddListener(() =>
         {
-            SceneManager.LoadScene(3);
+            QuitGame();
         });
+    }
+
+    void QuitGame () {
+        Application.Quit ();
     }
 }
