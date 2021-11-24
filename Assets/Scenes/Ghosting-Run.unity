@@ -159,8 +159,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrainTemplates:
   - {fileID: 3125842149393353389, guid: a860ee30394a1ec45b42fdb6509a6617, type: 3}
-  - {fileID: 4949145248291126587, guid: 2c585bee3fa966f4eb2222474a4aa262, type: 3}
-  - {fileID: 4298950347691129801, guid: 80fdb7b425527604d86b86b20e0333b4, type: 3}
   terrainTemplateWidth: 8.89
   earlyTerrainTemplates:
   - {fileID: 3125842149393353389, guid: a860ee30394a1ec45b42fdb6509a6617, type: 3}
@@ -339,7 +337,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.64907444, g: 0.9622642, b: 0.9338665, a: 0}
+  m_BackGroundColor: {r: 0.13333334, g: 0.13725491, b: 0.14117648, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -753,7 +751,6 @@ MonoBehaviour:
     m_Bits: 256
   score: {fileID: 1812234686}
   scoringRatio: 2
-  gameCamera: {fileID: 519420030}
 --- !u!114 &842938684
 MonoBehaviour:
   m_ObjectHideFlags: 0
