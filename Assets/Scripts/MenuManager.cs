@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private Button start_button;
+    [SerializeField] private Button leaderboard_button;
     [SerializeField] private Button options_button;
     [SerializeField] private Button exit_button;
 
@@ -15,9 +16,14 @@ public class MenuManager : MonoBehaviour
             SceneManager.LoadScene(1);
         });
 
-        options_button.onClick.AddListener(() =>
+        leaderboard_button.onClick.AddListener(() =>
         {
             SceneManager.LoadScene(2);
+        });
+
+        options_button.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene(3);
         });
 
         exit_button.onClick.AddListener(() =>

@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Ghosting-Run.unity
     guid: 9ce97ea8b85e7e744ab7a64305cc2ae4
   - enabled: 1
+    path: Assets/Scenes/Leaderboard.unity
+    guid: 5719b6ac96da06e48b9e42d235c7e606
+  - enabled: 1
     path: Assets/Scenes/OptionMenu.unity
     guid: 2eccc8f22c06ff6448ddc23104b15ca0
   m_configObjects: {}
