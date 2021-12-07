@@ -158,10 +158,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainTemplates:
-  - {fileID: 3125842149393353389, guid: a860ee30394a1ec45b42fdb6509a6617, type: 3}
+  - {fileID: 3429485876764605189, guid: a860ee30394a1ec45b42fdb6509a6617, type: 3}
+  - {fileID: 4446028195766402344, guid: 11a2d94549aa1fb47889262b5f2496b9, type: 3}
+  - {fileID: 2889168455982186659, guid: 4090bb4dfb11e0f448997f8c59f3c5d6, type: 3}
+  - {fileID: 7452570879600618519, guid: fd9a521a3451116408dee95ea5d4344b, type: 3}
+  - {fileID: 1070192585455000050, guid: 0c09afcccae76954994af4e3eaa97633, type: 3}
   terrainTemplateWidth: 8.89
   earlyTerrainTemplates:
-  - {fileID: 3125842149393353389, guid: a860ee30394a1ec45b42fdb6509a6617, type: 3}
+  - {fileID: 3429485876764605189, guid: a860ee30394a1ec45b42fdb6509a6617, type: 3}
   gameCamera: {fileID: 519420031}
   areaStartOffset: -10
   areaEndOffset: 5
