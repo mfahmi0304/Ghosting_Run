@@ -26,6 +26,7 @@ public class CharacterMoveController : MonoBehaviour
     private CharacterSoundController sound;
 
     private bool isJumping;
+    private bool isAttack;
     private bool isOnGround;
 
     private float lastPositionX;
@@ -44,12 +45,19 @@ public class CharacterMoveController : MonoBehaviour
         // read input
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log(isOnGround);
             if (isOnGround)
             {
                 isJumping = true;
 
                 sound.PlayJump();
             }
+        }
+
+        if(Input.GetKey(KeyCode.A)){
+            isAttack = true;
+            Debug.Log("Attack Musuh");
+            anim.SetBool("isAttack", isAttack);
         }
 
         // change animation
