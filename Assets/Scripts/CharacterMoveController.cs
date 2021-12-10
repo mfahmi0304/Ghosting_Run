@@ -19,8 +19,6 @@ public class CharacterMoveController : MonoBehaviour
     public ScoreController score;
     public float scoringRatio;
 
- 
-
     private Rigidbody2D rig;
     private Animator anim;
     private CharacterSoundController sound;
@@ -42,10 +40,11 @@ public class CharacterMoveController : MonoBehaviour
     }
     private void Update()
     {
+        isAttack = false;
+
         // read input
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log(isOnGround);
             if (isOnGround)
             {
                 isJumping = true;
@@ -56,13 +55,12 @@ public class CharacterMoveController : MonoBehaviour
 
         if(Input.GetKey(KeyCode.A)){
             isAttack = true;
-            Debug.Log("Attack Musuh");
-            anim.SetBool("isAttack", isAttack);
+            // Debug.Log("Attack Musuh");
         }
 
         // change animation
         anim.SetBool("isOnGround", isOnGround);
-
+        anim.SetBool("isAttack", isAttack);
         // calculate score
         int distancePassed = Mathf.FloorToInt(transform.position.x - lastPositionX);
         int scoreIncrement = Mathf.FloorToInt(distancePassed / scoringRatio);
@@ -81,7 +79,7 @@ public class CharacterMoveController : MonoBehaviour
         if (hit)
         {
             if (!isOnGround && rig.velocity.y <= 0)
-            { isOnGround = true; }
+            { isOnGround = true;}
         }
         else { isOnGround = false; }
 
@@ -95,6 +93,11 @@ public class CharacterMoveController : MonoBehaviour
 
         velocityVector.x = Mathf.Clamp(velocityVector.x + moveAccel * Time.deltaTime, 0.0f, maxSpeed);
         rig.velocity = velocityVector;
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log(col.gameObject.tag);
     }
    
     private void OnDrawGizmos()
