@@ -43,7 +43,7 @@ public class CharacterMoveController : MonoBehaviour
         isAttack = false;
 
         // read input
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isOnGround)
             {
@@ -53,7 +53,7 @@ public class CharacterMoveController : MonoBehaviour
             }
         }
 
-        if(Input.GetKey(KeyCode.A)){
+        if(Input.GetMouseButtonDown(0)){
             isAttack = true;
             // Debug.Log("Attack Musuh");
         }
