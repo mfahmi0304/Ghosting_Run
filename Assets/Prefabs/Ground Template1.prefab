@@ -179,7 +179,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -285,7 +285,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -391,7 +391,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -497,7 +497,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -603,7 +603,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -709,7 +709,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -757,6 +757,8 @@ GameObject:
   - component: {fileID: 5383894554087161062}
   - component: {fileID: 5383894554087161061}
   - component: {fileID: 6009390527933170964}
+  - component: {fileID: 4461935621331374196}
+  - component: {fileID: 4120740279477303500}
   m_Layer: 8
   m_Name: Ayang
   m_TagString: Enemy
@@ -833,7 +835,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5383894554087161063}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: ebe4c92dda129dd409b8e005d5cd0069, type: 2}
   m_IsTrigger: 0
@@ -852,6 +854,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 13.01, y: 9.05}
   m_EdgeRadius: 0
+--- !u!50 &4461935621331374196
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5383894554087161063}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &4120740279477303500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5383894554087161063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a9a8e622b6a8e4bb51f655d49a022a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5737696237969309675
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +956,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1027,7 +1062,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51c76929fdc184b4192c0ac048b4169a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

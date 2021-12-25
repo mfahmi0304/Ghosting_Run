@@ -19,6 +19,8 @@ public class CharacterMoveController : MonoBehaviour
     public ScoreController score;
     public float scoringRatio;
 
+    public EnemyController enemy;
+
     private Rigidbody2D rig;
     private Animator anim;
     private CharacterSoundController sound;
@@ -28,6 +30,8 @@ public class CharacterMoveController : MonoBehaviour
     private bool isOnGround;
 
     private float lastPositionX;
+
+    public string enemyName;
 
     private void Start()
     {
@@ -55,7 +59,6 @@ public class CharacterMoveController : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0)){
             isAttack = true;
-            // Debug.Log("Attack Musuh");
         }
 
         // change animation
@@ -95,10 +98,16 @@ public class CharacterMoveController : MonoBehaviour
         rig.velocity = velocityVector;
     }
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        Debug.Log(col.gameObject.tag);
-    }
+    // void OnCollisionEnter2D(Collision2D col)
+    // {
+    //     isAttack = true;
+    //     if(isAttack){
+    //         if(col.gameObject.tag == "Enemy"){
+    //             enemyName = col.gameObject.name;
+    //             Debug.Log(enemyName);
+    //         }
+    //     }
+    // }
    
     private void OnDrawGizmos()
     {
