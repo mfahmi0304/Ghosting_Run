@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScoreController : MonoBehaviour
 {
     private int currentScore = 0;
+    private float currentMana = 0.0f;
 
     private void Start()
     {
@@ -20,6 +21,13 @@ public class ScoreController : MonoBehaviour
     {
         currentScore += increment;
     }
+
+    public void IncreaseMana(float increment)
+    {
+        currentMana += increment;
+        Debug.Log(currentMana);
+    }
+
     public void FinishScoring()
     {
         //set high score

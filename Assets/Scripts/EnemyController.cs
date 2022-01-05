@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
 
     private Rigidbody2D rig;
     private Animator anim;
+    public ScoreController score;
 
     // private bool isDead;
 
@@ -31,6 +32,9 @@ public class EnemyController : MonoBehaviour
                 // isDead = true;
                 Debug.Log(col.otherCollider);
                 Destroy(gameObject);
+
+                // float manaIncrement = 0.2f;
+                // score.IncreaseMana(manaIncrement);
             }
         // }
     }
