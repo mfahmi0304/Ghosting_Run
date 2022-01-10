@@ -10,6 +10,8 @@ public class EnemyController : MonoBehaviour
     private Animator anim;
     public ScoreController score;
 
+    int scoreFromEnemy = 50;
+
     // private bool isDead;
 
     // Start is called before the first frame update
@@ -24,19 +26,19 @@ public class EnemyController : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        // isAttack = true;
-        // if(isAttack){
-            if(col.gameObject.tag == "Player"){
-                // isDead = true;
-                Debug.Log(col.otherCollider);
-                Destroy(gameObject);
+    // void OnCollisionEnter2D(Collision2D col)
+    // {
+    //     if(col.gameObject.tag == "Player"){
+    //         Destroy(gameObject);
 
-                // float manaIncrement = 0.2f;
-                // score.IncreaseMana(manaIncrement);
-            }
-        // }
-    }
+    //         score.IncreaseCurrentScore(scoreFromEnemy);
+    //     }
+    // }
+
+    // void UpdateScore(){
+    //     int scoreIncrement = 50;
+    //     score = GameObject.Find("Score Controller Object").GetComponent<ScoreController>();
+    //     score.IncreaseCurrentScore(scoreIncrement);
+    // }
 
 }

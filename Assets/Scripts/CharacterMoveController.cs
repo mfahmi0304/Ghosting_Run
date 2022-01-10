@@ -33,6 +33,9 @@ public class CharacterMoveController : MonoBehaviour
 
     public string enemyName;
 
+    public int lives = 5;
+    public int scoreEnemy = 0;
+
     private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -45,6 +48,7 @@ public class CharacterMoveController : MonoBehaviour
     private void Update()
     {
         isAttack = false;
+        
 
         // read input
         if (Input.GetKeyDown(KeyCode.Space))
@@ -59,11 +63,18 @@ public class CharacterMoveController : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0)){
             isAttack = true;
+            anim.SetBool("isAttack", true);
         }
+
+        // if(isAttack){
+            
+        // }
+        
 
         // change animation
         anim.SetBool("isOnGround", isOnGround);
         anim.SetBool("isAttack", isAttack);
+
         // calculate score
         int distancePassed = Mathf.FloorToInt(transform.position.x - lastPositionX);
         int scoreIncrement = Mathf.FloorToInt(distancePassed / scoringRatio);
@@ -98,16 +109,45 @@ public class CharacterMoveController : MonoBehaviour
         rig.velocity = velocityVector;
     }
 
-    // void OnCollisionEnter2D(Collision2D col)
-    // {
-    //     isAttack = true;
-    //     if(isAttack){
-    //         if(col.gameObject.tag == "Enemy"){
-    //             enemyName = col.gameObject.name;
-    //             Debug.Log(enemyName);
-    //         }
-    //     }
-    // }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log(isAttack);
+        // isAttack = true;
+        if(isAttack){
+            if(col.gameObject.tag == "Enemy"){
+                enemyName = col.gameObject.name;
+                if(enemyName == "Yul"){
+                    scoreEnemy = 10;
+                }
+                else if(enemyName == "Ayang"){
+                    scoreEnemy = 20;
+                }
+                else if(enemyName == "Kunti"){
+                    scoreEnemy = 25;
+                }
+                else if(enemyName == "Poci"){
+                    scoreEnemy = 50;
+                }
+                else if(enemyName == "Uwo"){
+                    scoreEnemy = 100;
+                }
+                Destroy(col.gameObject);
+                score.IncreaseCurrentScore(scoreEnemy);
+            }
+        }
+        else{
+            if(col.gameObject.tag == "Enemy"){
+                if(lives > 1){
+                    lives -= 1;
+                }
+                else{
+                    Debug.Log("Game Over");
+                }
+                Debug.Log(lives);
+                Destroy(col.gameObject);
+            }
+        }
+    }
    
     private void OnDrawGizmos()
     {
