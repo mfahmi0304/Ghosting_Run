@@ -36,6 +36,9 @@ public class CharacterMoveController : MonoBehaviour
     public int lives = 5;
     public int scoreEnemy = 0;
 
+    public float attackTime;
+    public float startTimeAttack;
+
     private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -47,8 +50,7 @@ public class CharacterMoveController : MonoBehaviour
     }
     private void Update()
     {
-        isAttack = false;
-        
+        anim.SetBool("isAttack", false);
 
         // read input
         if (Input.GetKeyDown(KeyCode.Space))
@@ -66,14 +68,20 @@ public class CharacterMoveController : MonoBehaviour
             anim.SetBool("isAttack", true);
         }
 
-        // if(isAttack){
-            
-        // }
-        
+        if( attackTime <= 0 )
+        {
+            isAttack = true;
+                
+            attackTime = Time.deltaTime;
+        }
+        else
+        {
+            attackTime -= Time.deltaTime;
+            isAttack = false;
+        }
 
         // change animation
-        anim.SetBool("isOnGround", isOnGround);
-        anim.SetBool("isAttack", isAttack);
+        anim.SetBool("isOnGround", isOnGround);        
 
         // calculate score
         int distancePassed = Mathf.FloorToInt(transform.position.x - lastPositionX);
@@ -111,8 +119,6 @@ public class CharacterMoveController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log(isAttack);
-        // isAttack = true;
         if(isAttack){
             if(col.gameObject.tag == "Enemy"){
                 enemyName = col.gameObject.name;
@@ -139,11 +145,12 @@ public class CharacterMoveController : MonoBehaviour
             if(col.gameObject.tag == "Enemy"){
                 if(lives > 1){
                     lives -= 1;
+                    Debug.Log(lives);
                 }
                 else{
                     Debug.Log("Game Over");
                 }
-                Debug.Log(lives);
+                
                 Destroy(col.gameObject);
             }
         }
