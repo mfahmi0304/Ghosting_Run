@@ -125,13 +125,13 @@ public class CharacterMoveController : MonoBehaviour
                 if(enemyName == "Yul"){
                     scoreEnemy = 10;
                 }
-                else if(enemyName == "Ayang"){
+                else if(enemyName == "Kunti"){
                     scoreEnemy = 20;
                 }
-                else if(enemyName == "Kunti"){
+                else if(enemyName == "Poci"){
                     scoreEnemy = 25;
                 }
-                else if(enemyName == "Poci"){
+                else if(enemyName == "Ayang"){
                     scoreEnemy = 50;
                 }
                 else if(enemyName == "Uwo"){
