@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMoveController : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class CharacterMoveController : MonoBehaviour
     public float attackTime;
     public float startTimeAttack;
 
+    [SerializeField] private HealthController _healthController;
+
     private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -49,7 +52,7 @@ public class CharacterMoveController : MonoBehaviour
         lastPositionX = transform.position.x;
     }
     private void Update()
-    {
+    { 
         anim.SetBool("isAttack", false);
 
         // read input
@@ -119,6 +122,7 @@ public class CharacterMoveController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        // Debug.Log(isAttack);
         if(isAttack){
             if(col.gameObject.tag == "Enemy"){
                 enemyName = col.gameObject.name;
@@ -145,12 +149,14 @@ public class CharacterMoveController : MonoBehaviour
             if(col.gameObject.tag == "Enemy"){
                 if(lives > 1){
                     lives -= 1;
-                    Debug.Log(lives);
                 }
                 else{
                     Debug.Log("Game Over");
+                    SceneManager.LoadScene(0);
                 }
                 
+                _healthController.playerHealth = _healthController.playerHealth - 1;
+                _healthController.UpdateHealth();
                 Destroy(col.gameObject);
             }
         }
