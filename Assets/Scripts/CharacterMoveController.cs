@@ -40,6 +40,9 @@ public class CharacterMoveController : MonoBehaviour
     public float attackTime;
     public float startTimeAttack;
 
+    public CameraController gameCamera;
+    public GameObject gameOverScreen;
+
     [SerializeField] private HealthController _healthController;
 
     private void Start()
@@ -151,8 +154,7 @@ public class CharacterMoveController : MonoBehaviour
                     lives -= 1;
                 }
                 else{
-                    Debug.Log("Game Over");
-                    SceneManager.LoadScene(0);
+                    GameOver();
                 }
                 
                 _healthController.playerHealth = _healthController.playerHealth - 1;
@@ -160,6 +162,21 @@ public class CharacterMoveController : MonoBehaviour
                 Destroy(col.gameObject);
             }
         }
+    }
+
+    private void GameOver()
+    {
+        // set high score
+        score.FinishScoring();
+
+        // stop camera movement
+        gameCamera.enabled = false;
+
+        // show gameover
+        gameOverScreen.SetActive(true);
+
+        // disable this too
+        this.enabled = false;
     }
    
     private void OnDrawGizmos()
